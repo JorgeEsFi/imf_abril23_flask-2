@@ -1,6 +1,6 @@
 # Instalar linux y actualizar
 FROM alpine:latest
-RUN apk update & apk add --no-cache gcc musl-dev linux-heders
+RUN apk update && apk add --no-cache gcc musl-dev linux-heders
 
 #configuraar imagen
 RUN apk update
@@ -13,5 +13,5 @@ WORKDIR /app
 COPY ./app
 
 # Instalar librerias de python
-RUN pip install -r requirements.txt --break-system-packages
+RUN pip install --no cache dir -r requirements.txt --break-system-packages
 CMD ["python3", "app.py"]
